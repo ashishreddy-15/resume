@@ -1,0 +1,178 @@
+%-------------------------
+% Modern Single-Page Software Engineer Resume
+% Author : Ashish Reddy Ette
+%-------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{titlesec}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Modern Clean Sans-Serif Font
+\usepackage[default,semibold]{sourcesans}
+
+% Modern Executive Color Palette
+\definecolor{PrimaryText}{HTML}{1F2937}   % Dark charcoal
+\definecolor{AccentColor}{HTML}{1E3A8A}   % Deep navy
+\definecolor{SubtleText}{HTML}{4B5563}    % Muted slate
+\definecolor{RuleColor}{HTML}{CBD5E1}     % Divider line slate
+
+\color{PrimaryText}
+\pagestyle{empty}
+
+% Clean 1-Page Geometry Margins
+\usepackage[top=0.38in, bottom=0.38in, left=0.5in, right=0.5in]{geometry}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+
+% Standardized Section Spacing (Consistent Everywhere)
+\titleformat{\section}
+  {\color{AccentColor}\normalsize\bfseries}
+  {}{0em}{\MakeUppercase}
+  [\vspace{-6pt}{\color{RuleColor}\rule{\textwidth}{0.6pt}}\vspace{-2pt}]
+
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+
+\pdfgentounicode=1
+
+% Modular Layout Macros
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-1pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {\normalsize\textbf{\color{PrimaryText}#1}} & {\small\textbf{\color{SubtleText}#2}} \\
+      {\small\textbf{\color{AccentColor}#3}} & {\small\color{SubtleText}#4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+% Project Heading with embedded hyperlink inside the title
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{1pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {\normalsize\href{#2}{\underline{\textbf{\color{PrimaryText}#1}}}} & {\small\color{SubtleText}Personal Flagship Project} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\domainHeader}[1]{
+  \vspace{3pt}
+  {\small\textbf{\color{AccentColor}#1}}
+  \vspace{-2pt}
+}
+
+% Crisp geometric square bullet
+\newcommand{\squarebullet}{\textcolor{AccentColor}{\rule[0.25ex]{0.42ex}{0.42ex}}}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.14in, itemsep=1.5pt, topsep=1.5pt, label=\squarebullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+    {\fontsize{20}{23}\selectfont \textbf{\color{PrimaryText}ASHISH REDDY ETTE}} \\[3pt]
+    {\normalsize\textbf{\color{AccentColor}Full Stack Software Engineer}} \enspace{\color{RuleColor}$|$}\enspace {\small\color{SubtleText}Hyderabad, India} \\[3pt]
+    {\small\color{SubtleText}
+      +91 8106026438 \enspace{\color{RuleColor}$\bullet$}\enspace 
+      \href{mailto:etteashishreddy1504@gmail.com}{\color{PrimaryText}etteashishreddy1504@gmail.com} \enspace{\color{RuleColor}$\bullet$}\enspace 
+      \href{https://www.linkedin.com/in/ashish-reddy-ette-5286a1196/}{\color{AccentColor}\textbf{linkedin.com/in/ashish-reddy-ette}} \enspace{\color{RuleColor}$\bullet$}\enspace 
+      \href{https://github.com/ashishreddy-15}{\color{AccentColor}\textbf{github.com/ashishreddy-15}}
+    }
+\end{center}
+\vspace{-8pt}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+\small{
+Performance-driven Full Stack Engineer with \textbf{3+ years} of enterprise experience architecting scalable \textbf{Java / Spring Boot microservices}, event-driven workflows, and modular \textbf{Angular Micro-Frontends}. Proven track record in designing resilient distributed systems, zero-trust OAuth2/OIDC security gateways, and high-throughput polyglot persistence layers across PostgreSQL, Oracle, and MongoDB.
+}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.0in, label={}, itemsep=2pt, topsep=1pt]
+  \small{
+    \item{\textbf{\color{PrimaryText}Backend Architecture:}} Java (21, 17, 8), Spring Boot, Spring Cloud, Spring Data JPA, Hibernate, REST APIs, Apache Kafka, JUnit 5, Mockito
+    \item{\textbf{\color{PrimaryText}Security \& Identity:}} Spring Security, OAuth2, OpenID Connect (OIDC), Keycloak, Azure AD (Entra ID) SSO, JWT, RBAC, MS Graph API[cite: 9]
+    \item{\textbf{\color{PrimaryText}Frontend Ecosystems:}} Angular (v8--v22), Micro-Frontends (Native \& Module Federation), TypeScript, Signals, RxJS, Tailwind CSS, HTML5/CSS3[cite: 9]
+    \item{\textbf{\color{PrimaryText}Databases \& Caching:}} PostgreSQL, Oracle Database, MongoDB, MySQL, Redis, Flyway Migrations[cite: 9]
+    \item{\textbf{\color{PrimaryText}DevOps \& Observability:}} Docker, Git, CI/CD (GitHub Actions, GitLab CI), OpenTelemetry, Prometheus, Grafana, Jaeger, SonarQube, Linux[cite: 9]
+  }
+\end{itemize}
+
+%-----------PROFESSIONAL EXPERIENCE-----------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Tata Consultancy Services (TCS)}{Hyderabad, India}
+    {Systems Engineer -- Full Stack Development}{Oct 2023 -- Present}
+    
+    \domainHeader{Backend Architecture \& Distributed Microservices}
+    \resumeItemListStart
+      \resumeItem{Architected and maintained high-availability \textbf{Spring Boot microservices} integrated with Spring Cloud Config Server and Eureka for centralized configuration and dynamic service discovery[cite: 9].}
+      \resumeItem{Engineered core enterprise workflow automation modules supporting dynamic template schemas and multi-tier approval routing, cutting manual operational turnaround time by \textbf{40\%}[cite: 9].}
+      \resumeItem{Spearheaded the modernization of legacy pre-Java 8 services to \textbf{Java 17} and modern Spring Boot standards, eliminating technical debt and deprecated third-party GSON dependencies[cite: 9].}
+      \resumeItem{Enforced strict SonarQube quality gates and automated JUnit 5 / Mockito test suites, sustaining \textbf{80\%+ code coverage} and resolving \textbf{100+} critical/major code smells and vulnerabilities[cite: 9].}
+    \resumeItemListEnd
+
+    \domainHeader{Enterprise Security \& Database Engineering}
+    \resumeItemListStart
+      \resumeItem{Integrated \textbf{Microsoft Entra ID (Azure SSO)} into Spring Boot microservices via OAuth2 and OpenID Connect (OIDC) protocols to establish zero-trust federated corporate authentication[cite: 9].}
+      \resumeItem{Automated real-time user provisioning and role synchronization in PostgreSQL using the \textbf{Microsoft Graph API}, reducing manual employee onboarding effort by \textbf{85\%}[cite: 9].}
+      \resumeItem{Refactored persistence layers to be \textbf{100\% database-agnostic} using JPQL and JPA Criteria Specifications, optimizing composite indexes to boost complex query speed by \textbf{35\%} across PostgreSQL and Oracle[cite: 9].}
+    \resumeItemListEnd
+
+    \domainHeader{Frontend Engineering (Angular \& Micro-Frontends)}
+    \resumeItemListStart
+      \resumeItem{Designed modular \textbf{Angular Micro-Frontends} utilizing Module Federation to power real-time operational analytics dashboards with interactive data visualizations[cite: 9].}
+      \resumeItem{Led the zero-downtime migration of enterprise client applications from \textbf{Angular 8 to Angular 19}, resolving breaking dependency changes while maintaining 100\% feature continuity[cite: 9].}
+      \resumeItem{Built a responsive \textbf{Workflow Manager UI} in Angular and TypeScript, remediating memory leaks and component bottlenecks to streamline multi-stage approval tracking[cite: 9].}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------FLAGSHIP PROJECT-----------
+\section{Flagship Engineering Project}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {Enterprise Event-Driven Workflow Platform (EWP)}
+    {https://github.com/ashishreddy-15/enterprise-workflow-platform}
+    \vspace{1pt}
+    {\footnotesize\color{SubtleText}\textbf{Tech Stack:} \textit{Java 21, Spring Boot, Kafka (KRaft), Angular 22, Keycloak 26, OpenTelemetry, Docker}}[cite: 9]
+    \vspace{2pt}
+    \resumeItemListStart
+      \resumeItem{Architected a 4-microservice event-driven workflow engine featuring \textbf{100\% data-driven state machines} and polyglot persistence across \textbf{PostgreSQL 16} (ACID state/locking) and \textbf{MongoDB 7.0} (dynamic schemas/audit logs)[cite: 9].}
+      \resumeItem{Eliminated distributed dual-write bugs by engineering the \textbf{Transactional Outbox Pattern} with \texttt{FOR UPDATE SKIP LOCKED} polling, Apache Kafka in KRaft mode, non-blocking retry topics, and idempotent CQRS consumers[cite: 9].}
+      \resumeItem{Built a reactive \textbf{Spring Cloud Gateway BFF} enforcing \texttt{HttpOnly} sliding-window session cookies, \textbf{Keycloak 26} \& Azure AD OIDC federation, anti-spoofing identity filters, and Segregation of Duties (SoD)[cite: 9].}
+      \resumeItem{Developed 4 \textbf{Angular 22 Zoneless Micro-Frontends} via Native Federation and instrumented full-stack observability using \textbf{OpenTelemetry}, Prometheus, Grafana, and Jaeger distributed tracing[cite: 9].}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION & HONORS-----------
+\section{Education, Certifications \& Honors}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {B.V. Raju Institute of Technology}{Telangana, India}
+    {Bachelor of Technology in Computer Science \& Engineering}{2019 -- 2023}
+    \vspace{2pt}
+    \resumeItemListStart
+      \resumeItem{\textbf{Star of the Month Award:} Recognized by Tata Consultancy Services for outstanding engineering delivery (June 2026)[cite: 9].}
+      \resumeItem{\textbf{Certification:} Google Cybersecurity Professional Certificate[cite: 9].}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}

@@ -1,0 +1,243 @@
+%------------------------------------------------------------------------------
+% Modern Executive Full Stack Software Engineer Resume
+% Candidate: Ashish Reddy Ette
+% Designed to exceed 2025/2026 industry standards: ATS-friendly, scannable & balanced 1-page fit
+% Supports XeLaTeX (native Inter + FontAwesome 7) and pdfLaTeX (TeX Gyre Heros)
+%------------------------------------------------------------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{ifxetex,ifluatex}
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+\else
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
+\fi
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \setmainfont{Inter}[
+    UprightFont = *,
+    BoldFont = * SemiBold,
+    ItalicFont = * Italic,
+    BoldItalicFont = * SemiBold Italic
+  ]
+  \newfontfamily\headerfont{Inter Display}[
+    UprightFont = *,
+    BoldFont = * Bold
+  ]
+  % FontAwesome 7 Desktop OTF support
+  \newfontfamily{\faSolid}[Path=/usr/share/fonts/fontawesome-7-free-fonts/]{Font Awesome 7 Free-Solid-900.otf}
+  \newfontfamily{\faBrands}[Path=/usr/share/fonts/fontawesome-7-brands-fonts/]{Font Awesome 7 Brands-Regular-400.otf}
+  \newcommand{\iconPhone}{{\faSolid\symbol{"F095}}}
+  \newcommand{\iconEmail}{{\faSolid\symbol{"F0E0}}}
+  \newcommand{\iconLocation}{{\faSolid\symbol{"F3C5}}}
+  \newcommand{\iconLinkedIn}{{\faBrands\symbol{"F08C}}}
+  \newcommand{\iconGitHub}{{\faBrands\symbol{"F09B}}}
+  \newcommand{\iconExternal}{{\faSolid\symbol{"F08E}}}
+  \newcommand{\iconCert}{{\faSolid\symbol{"F559}}}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{tgheros}
+  \renewcommand*\familydefault{\sfdefault}
+  \newcommand{\headerfont}{\bfseries}
+  \newcommand{\iconPhone}{}
+  \newcommand{\iconEmail}{}
+  \newcommand{\iconLocation}{}
+  \newcommand{\iconLinkedIn}{\textbf{in}}
+  \newcommand{\iconGitHub}{\textbf{git}}
+  \newcommand{\iconExternal}{$\rightarrow$}
+  \newcommand{\iconCert}{$\checkmark$}
+\fi
+
+% --- Color Palette (Executive Slate & Modern Tech Navy) ---
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\definecolor{PrimaryText}{HTML}{0F172A}    % Slate 900 (High-contrast deep charcoal)
+\definecolor{SecondaryText}{HTML}{334155}  % Slate 700 (Body text readability)
+\definecolor{MutedText}{HTML}{64748B}      % Slate 500 (Dates & locations)
+\definecolor{BrandBlue}{HTML}{1D4ED8}      % Deep Royal Blue (Headers & accents)
+\definecolor{InteractiveBlue}{HTML}{2563EB}% Blue 600 (Interactive links)
+\definecolor{DividerColor}{HTML}{CBD5E1}   % Slate 300 (Clean hairline rules)
+
+% --- Page Geometry (Engineered for Exact 1-Page Layout with Breathing Room) ---
+\usepackage[top=0.38in, bottom=0.38in, left=0.45in, right=0.45in]{geometry}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\parindent}{0pt}
+\linespread{1.04}
+
+% --- Hyperlinks ---
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=InteractiveBlue,
+    urlcolor=InteractiveBlue,
+    pdftitle={Ashish Reddy Ette - Resume},
+    pdfauthor={Ashish Reddy Ette}
+}
+\urlstyle{same}
+
+% --- Lists & Graphics ---
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+% Sleek minimalist bullet: crisp colored dot
+\newcommand{\resumebullet}{%
+  \tikz[baseline=-0.45ex]\fill[BrandBlue] (0,0) circle (1.15pt);%
+}
+
+% Standardized list
+\newlist{resumeList}{itemize}{1}
+\setlist[resumeList]{
+  label=\resumebullet,
+  leftmargin=1.12em,
+  itemsep=1.2pt,
+  parsep=0pt,
+  topsep=1.2pt,
+  partopsep=0pt
+}
+
+% Modern Section Header with Vertical Accent Pill & Trailing TeX Leaders Rule
+\newcommand{\resumeSection}[1]{%
+  \vspace{5.0pt}%
+  \noindent%
+  \parbox{\linewidth}{%
+    \begin{tikzpicture}[baseline=-0.45ex]
+      \fill[BrandBlue, rounded corners=0.8pt] (0,-4.2pt) rectangle (2.8pt, 6.2pt);
+    \end{tikzpicture}%
+    \hspace{4.5pt}%
+    {\fontsize{9.2}{11.5}\selectfont\headerfont\color{BrandBlue}\MakeUppercase{#1}}%
+    \hspace{6pt}%
+    {\color{DividerColor}\leaders\hrule height 0.6pt\hfill\kern0pt}%
+  }%
+  \par\vspace{2.2pt}%
+}
+
+% Standardized Experience Subheading
+\newcommand{\experienceSubheading}[4]{%
+  \vspace{1.0pt}%
+  \noindent%
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}%
+    {\fontsize{9.8}{12}\selectfont\textbf{\color{PrimaryText}#1}} & {\small\color{MutedText}\textbf{#2}} \\%
+    {\small\textbf{\color{BrandBlue}#3}} & {\small\color{MutedText}#4} \\%
+  \end{tabular*}%
+  \vspace{-2.6pt}%
+}
+
+% Flagship Project Subheading with Interactive Badge
+\newcommand{\projectSubheading}[3]{%
+  \vspace{1.0pt}%
+  \noindent%
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}%
+    {\fontsize{9.8}{12}\selectfont\textbf{\color{PrimaryText}#1}} & {\small\href{#3}{\color{InteractiveBlue}\textbf{\iconGitHub\ Codebase Repository \iconExternal}}} \\%
+  \end{tabular*}%
+  \par\vspace{0.8pt}%
+  {\footnotesize\textbf{\color{PrimaryText}Core Stack:} \color{SecondaryText}\textit{#2}}%
+  \par\vspace{1.2pt}%
+}
+
+\begin{document}
+\color{SecondaryText}
+
+%==============================================================================
+% HEADER
+%==============================================================================
+\begin{center}
+    {\fontsize{22}{25}\selectfont\headerfont\color{PrimaryText}ASHISH REDDY ETTE} \\[2.2pt]
+    {\fontsize{10.2}{12.5}\selectfont\textbf{\color{BrandBlue}Full Stack Software Engineer} \enspace{\color{DividerColor}$|$}\enspace \textbf{\color{SecondaryText}Distributed Systems \& Microservices} \enspace{\color{DividerColor}$|$}\enspace {\color{MutedText}\iconLocation\ Hyderabad, India}} \\[3.8pt]
+    {\fontsize{9.0}{11.5}\selectfont\color{SecondaryText}
+      \href{tel:+918106026438}{\color{SecondaryText}\iconPhone\ +91 8106026438} 
+      \enspace{\color{DividerColor}$\cdot$}\enspace 
+      \href{mailto:etteashishreddy1504@gmail.com}{\color{InteractiveBlue}\iconEmail\ etteashishreddy1504@gmail.com} 
+      \enspace{\color{DividerColor}$\cdot$}\enspace 
+      \href{https://www.linkedin.com/in/ashish-reddy-ette-5286a1196/}{\color{InteractiveBlue}\iconLinkedIn\ ashish-reddy-ette} 
+      \enspace{\color{DividerColor}$\cdot$}\enspace 
+      \href{https://github.com/ashishreddy-15}{\color{InteractiveBlue}\iconGitHub\ ashishreddy-15}
+    }
+\end{center}
+\vspace{-7.5pt}
+
+%==============================================================================
+% PROFESSIONAL SUMMARY
+%==============================================================================
+\resumeSection{Professional Summary}
+{\small
+Performance-driven Full Stack Engineer with \textbf{3+ years} of enterprise experience architecting resilient \textbf{Java / Spring Boot microservices}, event-driven workflows, and modular \textbf{Angular Micro-Frontends}. Proven track record designing zero-trust OAuth2/OIDC security gateways, enterprise workflow engines, and high-throughput polyglot persistence layers across PostgreSQL, Oracle, and MongoDB.
+}
+
+%==============================================================================
+% TECHNICAL SKILLS (Clean 2-Column Scannable Matrix)
+%==============================================================================
+\resumeSection{Technical Skills}
+\vspace{-1pt}
+\begin{tabular*}{\textwidth}{@{}p{0.50\textwidth}@{\extracolsep{\fill}}p{0.485\textwidth}@{}}
+  {\small\textbf{\color{PrimaryText}Backend Architecture:}} {\footnotesize Java (21/17/8), Spring Boot 3, Spring Cloud, JPA/Hibernate, Kafka, REST APIs} &
+  {\small\textbf{\color{PrimaryText}Frontend Architecture:}} {\footnotesize Angular (v8--v22), Micro-Frontends, TypeScript, Signals, RxJS, Tailwind CSS} \\
+  \vspace{-2.5pt} & \vspace{-2.5pt} \\
+  {\small\textbf{\color{PrimaryText}Security \& Identity:}} {\footnotesize Spring Security, OAuth2/OIDC, Keycloak, Azure AD (Entra ID), JWT, RBAC, Graph API} &
+  {\small\textbf{\color{PrimaryText}Databases \& Caching:}} {\footnotesize PostgreSQL, Oracle Database, MongoDB, MySQL, Redis, Flyway Migrations} \\
+  \vspace{-2.5pt} & \vspace{-2.5pt} \\
+  {\small\textbf{\color{PrimaryText}DevOps \& Cloud:}} {\footnotesize Docker, Linux, CI/CD (GitHub/GitLab Actions), Cloud-Native Patterns} &
+  {\small\textbf{\color{PrimaryText}Observability \& Quality:}} {\footnotesize OpenTelemetry, Prometheus, Grafana, Jaeger, SonarQube, JUnit 5, Mockito} \\
+\end{tabular*}
+\vspace{-4.5pt}
+
+%==============================================================================
+% PROFESSIONAL EXPERIENCE
+%==============================================================================
+\resumeSection{Professional Experience}
+
+\experienceSubheading
+  {Tata Consultancy Services (TCS)}{Hyderabad, India}
+  {Systems Engineer -- Full Stack Development}{Oct 2023 -- Present}
+
+\begin{resumeList}
+  \item \textbf{Microservices Architecture:} Architected and maintained high-availability \textbf{Spring Boot microservices} integrated with Spring Cloud Config Server and Eureka dynamic discovery, achieving 99.9\% system uptime.
+  \item \textbf{Workflow Automation:} Engineered enterprise workflow automation modules with dynamic template schemas and multi-tier approval routing, reducing manual operational turnaround time by \textbf{40\%}.
+  \item \textbf{Legacy Modernization:} Spearheaded legacy migration from pre-Java 8 to \textbf{Java 17} and modern Spring Boot, enforcing SonarQube quality gates and JUnit 5/Mockito suites to sustain \textbf{80\%+ code coverage}.
+  \item \textbf{Enterprise Security \& SSO:} Integrated \textbf{Microsoft Entra ID (Azure SSO)} via OAuth2/OIDC and automated user provisioning via \textbf{Microsoft Graph API}, reducing employee onboarding overhead by \textbf{85\%}.
+  \item \textbf{Polyglot Persistence:} Refactored persistence layers to be \textbf{100\% database-agnostic} using JPQL and JPA Criteria Specifications, tuning composite indexes to boost complex query performance by \textbf{35\%} across PostgreSQL and Oracle.
+  \item \textbf{Frontend Micro-Frontends:} Designed modular \textbf{Angular Micro-Frontends} (Module Federation) for Workflow Manager UI; led the zero-downtime client upgrade from \textbf{Angular 8 to Angular 19} with full feature parity.
+  \item \textbf{Honors \& Recognition:} Conferred \textbf{TCS Star of the Month} (June 2024) for outstanding engineering delivery in enterprise microservices modernization and workflow systems.
+\end{resumeList}
+
+%==============================================================================
+% FLAGSHIP ENGINEERING PROJECT
+%==============================================================================
+\resumeSection{Flagship Engineering Project}
+
+\projectSubheading
+  {Enterprise Event-Driven Workflow Platform (EWP)}
+  {Java 21, Spring Boot, Apache Kafka (KRaft), Angular 22, Keycloak 26, OpenTelemetry, Docker, PostgreSQL, MongoDB}
+  {https://github.com/ashishreddy-15/enterprise-workflow-platform}
+
+\begin{resumeList}
+  \item \textbf{Distributed State Machines:} Architected a 4-microservice event-driven engine featuring \textbf{100\% data-driven state machines} and polyglot persistence across \textbf{PostgreSQL 16} (ACID state/locking) and \textbf{MongoDB 7.0} (dynamic schemas/audit).
+  \item \textbf{Transactional Outbox \& CQRS:} Eliminated distributed dual-write bugs by implementing the \textbf{Transactional Outbox Pattern} with \texttt{FOR UPDATE SKIP LOCKED} polling, Apache Kafka in KRaft mode, retry topics, and idempotent consumers.
+  \item \textbf{API Gateway \& Zero-Trust Auth:} Built a reactive \textbf{Spring Cloud Gateway BFF} enforcing \texttt{HttpOnly} sliding-window session cookies, \textbf{Keycloak 26} \& Azure AD OIDC federation, anti-spoofing identity filters, and Segregation of Duties.
+  \item \textbf{Full-Stack Observability:} Developed 4 \textbf{Angular 22 Zoneless Micro-Frontends} via Native Federation and instrumented distributed tracing with \textbf{OpenTelemetry}, Prometheus, Grafana, and Jaeger.
+\end{resumeList}
+
+%==============================================================================
+% EDUCATION & CERTIFICATIONS
+%==============================================================================
+\resumeSection{Education \& Certifications}
+
+\vspace{1.0pt}
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+  {\fontsize{9.6}{12}\selectfont\textbf{\color{PrimaryText}B.V. Raju Institute of Technology (BVRIT)}} & {\small\color{MutedText}\textbf{Telangana, India}} \\
+  {\small\textbf{\color{BrandBlue}Bachelor of Technology in Computer Science \& Engineering}} & {\small\color{MutedText}2019 -- 2023} \\
+  \vspace{-1.5pt} & \vspace{-1.5pt} \\
+  {\fontsize{9.6}{12}\selectfont\textbf{\color{PrimaryText}Google Cybersecurity Professional Certificate}} & {\small\color{MutedText}\textbf{Google Credential}} \\
+  {\small\color{SecondaryText}Specialization in Network Security, Threat Intelligence, Incident Response \& Security Automation} & {\small\color{MutedText}\iconCert\ Verified} \\
+\end{tabular*}
+
+\end{document}
